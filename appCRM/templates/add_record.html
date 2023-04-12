@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div class="col-md-7 offset-md-3">
+    <h1>Add record</h1>
+    <form method="POST" action="{% url 'add_record'  %}">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-md-6">
+            {% for field in form %}
+            <p class="form-group">
+                {{field.label_tag}} {{field}}
+            </p>
+            {% if field.name == 'email' %}
+            </div><div class="col-md-6">
+            {% endif%}
+            {% endfor%}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Add record</button>
+        <a href="{% url 'home' %}">
+            <div class="btn btn-primary">Cancel</div>
+        </a>
+</form>
+</div>
+{% endblock %}

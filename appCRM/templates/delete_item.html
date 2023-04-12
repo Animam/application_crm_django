@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content%}
-<br><br><div class="col-md-3 offset-md-3">
+<br><br>
+<div class="col-md-3 offset-md-3">
     <div class="card text-black" style="max-width: 28rem;">
-        <div class="card-header">Do you really want to delete?</div>
+        <div class="card-header">Do you really want to delete  <strong>{{delet_record.first_name}}  {{delet_record.last_name}}</strong> record's ?</div>
         <div class="card-body">
             <form method="post" action="">
                 {% csrf_token %}

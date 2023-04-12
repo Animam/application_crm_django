@@ -4,8 +4,7 @@
 
 
 {% if user.is_authenticated %}
-<br><h1>Record...</h1><br><br>
-
+<br><h1 style="text-align: center">List of Records</h1><br>
 
 <table class="table table-hover">
     <thead class="table-dark">
@@ -18,7 +17,6 @@
         <th scope="col">City</th>
         <th scope="col">Zipcode</th>
         <th scope="col">Created At</th>
-        <!--        <th scope="col">ID</th>-->
     </tr>
     </thead>
     <tbody>
@@ -41,8 +39,6 @@
         <td> {{record.city}}</td>
         <td> {{record.zipcode}}</td>
         <td> {{record.created_at}}</td>
-        <!--        <td> {{record.id}}</td>-->
-
     </tr>
 
 
@@ -50,7 +46,6 @@
     {%endfor%}
     {% endif%}
 </table>
-
 
 {% else %}
 <div class="col-md-3 offset-md-3">
